@@ -1,0 +1,9 @@
+# import "./version.gql"
+
+type Repository {
+  id: ID!
+  appId: Bytes!
+  name: String!
+  address: Bytes!
+  versions: [Version!]
+}

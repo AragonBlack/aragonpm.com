@@ -1,0 +1,14 @@
+query RepositoriesNameContains($searchQuery: String) {
+  repositories(where: { name_contains: $searchQuery }) {
+    id
+    appId
+    name
+    address
+    versions {
+      id
+      version
+      contract
+      content
+    }
+  }
+}

@@ -1,0 +1,7 @@
+type Version {
+  id: ID!
+  repository: Repository!
+  version: String!
+  contract: Bytes
+  content: String
+}

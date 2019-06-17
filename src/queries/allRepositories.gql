@@ -1,0 +1,14 @@
+query AllRepositories {
+  repositories {
+    id
+    appId
+    name
+    address
+    versions {
+      id
+      version
+      contract
+      content
+    }
+  }
+}
