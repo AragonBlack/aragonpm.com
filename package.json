@@ -1,0 +1,64 @@
+{
+  "name": "aragonpm.com",
+  "version": "0.1.0",
+  "description": "frontend repo for aragonpm.com",
+  "scripts": {
+    "lint": "eslint ./src",
+    "sync-assets": "copy-aragon-ui-assets -n aragon-ui ./build && rsync -rtu ./public/ ./build",
+    "start": "npm run sync-assets && npm run build:script -- --no-minify && parcel serve index.html -p 3001 --out-dir build/",
+    "build": "npm run sync-assets && npm run build:script && parcel build index.html --out-dir build/ --public-url '.'",
+    "build:script": "parcel build src/index.js --out-dir build/"
+  },
+  "dependencies": {
+    "@aragon/ui": "^0.40.1",
+    "apollo-boost": "^0.4.2",
+    "apollo-client": "^2.6.0-rc.3",
+    "eslint-plugin-react": "^7.13.0",
+    "graphql": "^14.3.1",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
+    "react-select": "^3.0.4",
+    "semver": "^6.1.1",
+    "styled-components": "^4.3.1"
+  },
+  "devDependencies": {
+    "@ablack/eslint-config-tests": "^1.0.0",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.4.1",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "browserslist": [
+    ">2%",
+    "last 1 edge versions",
+    "not ie > 0",
+    "not op_mini all"
+  ]
+}

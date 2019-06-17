@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# yarn
+yarn-error.log
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# please stop macos
+.DS_Store
+
+# don't version build for now
+build
+
+# don't version cache folder
+.cache
