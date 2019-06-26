@@ -1,25 +1,28 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
+import { H2, P, Bold, CustomCard } from './Styled'
 
-import { Card, Text, theme } from '@aragon/ui'
-
-const h2 = { color: theme.textPrimary }
-const span = { color: theme.textSecondary }
-
-const SearchResultsItem = ({ repository }) => {
-  console.log(repository)
+const SearchResultsItem = ({ repository, history }) => {
+  const goToPackage = () => history.push(`/package/${repository.id}`)
   return (
-    <CustomCard width="45%">
-      <Text as="h2" size="xlarge" weight="bold" style={h2}>
-        {repository.name}
-      </Text>
-      <Text style={span}>{repository.address}</Text>
-    </CustomCard>
+    <ResultItemCard width="100%" height="100%" onClick={goToPackage}>
+      <H2>{repository.name}</H2>
+      <P>
+        <Bold>ID:</Bold> {repository.id}
+      </P>
+      <P>
+        <Bold>Address:</Bold> {repository.address}
+      </P>
+      <P>
+        <Bold>AppID:</Bold> {repository.appId}
+      </P>
+    </ResultItemCard>
   )
 }
 
-const CustomCard = styled(Card)`
-  margin-top: 5px;
-  margin-left: 5px;
+const ResultItemCard = styled(CustomCard)`
+  cursor: pointer;
 `
-export default SearchResultsItem
+
+export default withRouter(SearchResultsItem)

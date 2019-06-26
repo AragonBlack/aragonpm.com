@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import SearchResultsItem from './SearchResultsItem'
 
 const SearchResults = ({ repositories }) => {
@@ -15,6 +14,6 @@ const SearchResults = ({ repositories }) => {
 
 const SearchResultsContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 `
 export default SearchResults

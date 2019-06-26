@@ -4,11 +4,5 @@ query RepositoriesNameContains($searchQuery: String) {
     appId
     name
     address
-    versions {
-      id
-      version
-      contract
-      content
-    }
   }
 }

@@ -1,0 +1,14 @@
+query RepositoryById($id: ID) {
+  repository(id: $id) {
+    id
+    appId
+    name
+    address
+    versions {
+      id
+      version
+      contract
+      content
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.route-enter {
+  opacity: 0;
+}
+.route-enter-active {
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+.route-exit {
+  opacity: 0;
+}
+.route-exit-active {
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+
+.result-enter {
+  opacity: 0;
+}
+.result-enter-active {
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
+.result-exit {
+  opacity: 0;
+}
+.result-exit-active {
+  opacity: 1;
+  transition: 0.5s ease-in;
+}
